@@ -33,6 +33,7 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
+
         $note = new note([
             'fqdn' => $request->get('fqdn'),
             'port' => $request->get('port'),

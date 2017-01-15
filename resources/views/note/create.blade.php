@@ -4,7 +4,7 @@
 <title>Add Certificate | Certnote</title>
 @endsection
 
-@section('main_container')
+@section('content')
 <div class="right_col" role="main">
   <div class="">
     <div class="page-title">

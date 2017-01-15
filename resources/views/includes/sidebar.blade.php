@@ -1,3 +1,4 @@
+<!-- Begin Sidebar -->
 <aside class="sidebar">
     <div class="sidebar-container">
         <div class="sidebar-header">
@@ -159,4 +160,6 @@
         </ul>
     </footer>
 </aside>
-<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-overlay" id="sidebar-overlay">
+</div>
+<!-- End Sidebar -->
