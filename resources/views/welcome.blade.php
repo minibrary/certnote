@@ -70,7 +70,6 @@
                 <div class="title m-b-md">
                     CertNote
                 </div>
-
             @if (Route::has('login'))
                 <div class="links">
                     <a href="{{ url('/login') }}">Login</a>

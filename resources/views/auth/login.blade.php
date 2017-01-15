@@ -56,15 +56,17 @@
                               </label>
                                 <a href="{{ url('/password/reset') }}" class="forgot-btn pull-right">Forgot password?</a>
                               </div>
-                            <div class="form-group"> <button type="submit" class="btn btn-block btn-primary">Login</button> </div>
                             <div class="form-group">
-                                <p class="text-muted text-xs-center">Do not have an account? <a href="/register">Sign Up!</a></p>
+                              <div class="row">
+                                <button type="submit" class="btn btn-block btn-success">Login</button>
+                                  <p class="text-muted text-xs-center">Do not have an account? <a href="{{ url('/register') }}" class="btn btn-block btn-primary">Sign Up!</a></p>
+                              </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="text-xs-center">
-                    <a href="/" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to home </a>
+                    <a href="/" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to main </a>
                 </div>
             </div>
         </div>

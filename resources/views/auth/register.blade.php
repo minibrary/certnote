@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Register | CertNote </title>
+        <title> Sign Up | CertNote </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,42 +32,67 @@
                 <div class="card">
                     <header class="auth-header">
                         <h1 class="auth-title">
-                          <div class="logo">
-        	                   <span class="l l1"></span>
-        	                   <span class="l l2"></span>
-        	                   <span class="l l3"></span>
-        	                   <span class="l l4"></span>
-        	                   <span class="l l5"></span>
-                          </div>
-
-                            Cert Note
-                          </h1>
-                      </header>
-
+        <div class="logo">
+        	<span class="l l1"></span>
+        	<span class="l l2"></span>
+        	<span class="l l3"></span>
+        	<span class="l l4"></span>
+        	<span class="l l5"></span>
+        </div>        CertNote
+      </h1> </header>
                     <div class="auth-content">
                         <p class="text-xs-center">SIGNUP TO GET INSTANT ACCESS</p>
-                        <form id="signup-form" action="{{ url('/register') }}" method="POST" novalidate="">
-                            <div class="form-group"> <label for="name">Name</label> <input type="text" class="form-control underlined" name="name" id="name" placeholder="Enter your name" required=""> </div>
-                            <div class="form-group"> <label for="email">Email</label> <input type="email" class="form-control underlined" name="email" id="email" placeholder="Enter email address" required=""> </div>
-                            <div class="form-group"> <label for="password">Password</label>
+
+                        <form id="signup-form" role="form" action="{{ url('/register') }}" method="POST" action="{{ url('/register') }}">
+                          {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                              <label for="name">Name</label>
+                                <input type="text" class="form-control underlined" name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}" required autofocus>
+                                  @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                  @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                              <label for="email">Email</label>
+                                <input type="email" class="form-control underlined" name="email" id="email" placeholder="Enter email address" value="{{ old('email') }}" required>
+                                  @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                  @endif
+                              </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                              <label for="password">Password</label>
                                 <div class="row">
-                                    <div class="col-sm-6"> <input type="password" class="form-control underlined" name="password" id="password" placeholder="Enter password" required=""> </div>
-                                    <div class="col-sm-6"> <input type="password" class="form-control underlined" name="retype_password" id="retype_password" placeholder="Re-type password" required=""> </div>
+                                    <div class="col-sm-6"> <input type="password" class="form-control underlined" name="password" id="password" placeholder="Enter password" required>
+                                      @if ($errors->has('password'))
+                                          <span class="help-block">
+                                              <strong>{{ $errors->first('password') }}</strong>
+                                          </span>
+                                      @endif
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <input type="password" class="form-control underlined" name="password_confirmation" id="password_confirmation" placeholder="Re-type password" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group"> <label for="agree">
-            <input class="checkbox" name="agree" id="agree" type="checkbox" required="">
-            <span>Agree the terms and <a href="#">policy</a></span>
-          </label> </div>
-                            <div class="form-group"> <button type="submit" class="btn btn-block btn-primary">Sign Up</button> </div>
+
                             <div class="form-group">
-                                <p class="text-muted text-xs-center">Already have an account? <a href="/login">Login!</a></p>
-                            </div>
+                              <div class="row">
+                                <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
+                                  <p class="text-muted text-xs-center">Already have an account? <a href="{{ url('/login') }}" class="btn btn-block btn-success">Login!</a></p>
+                              </div>
+                          </div>
                         </form>
                     </div>
                 </div>
                 <div class="text-xs-center">
-                    <a href="/" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to home </a>
+                    <a href="{{ url('/') }}" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to main </a>
                 </div>
             </div>
         </div>
