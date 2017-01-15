@@ -8,7 +8,7 @@
 
 <script src="/js/jquery-3.1.1.min.js"></script>
 <!-- <link   href="/css/bootstrap.min.css" rel="stylesheet"> -->
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
 
 @endsection
 

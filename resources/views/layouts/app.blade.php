@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="{{ asset("css/vendor.css") }}">
         @yield('stylesheet')
         <!-- Theme initialization -->
         <script>
@@ -22,7 +22,7 @@
             }
             else
             {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+                document.write('<link rel="stylesheet" id="theme-style" href="{{ asset("css/app.css") }}">');
             }
         </script>
     </head>
@@ -361,8 +361,8 @@
                 <div class="color-secondary"></div>
             </div>
         </div>
-        <script src="js/vendor.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{ asset("js/vendor.js") }}"></script>
+        <script src="{{ asset("js/app.js") }}"></script>
         @yield('js')
 
         @yield('script')
